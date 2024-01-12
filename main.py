@@ -3,6 +3,7 @@ from flask_restx import Resource, Api
 
 app = Flask(__name__)
 api = Api(app)
+import logging
 
 VERIFY_TOKEN = "Hello"
 
@@ -20,7 +21,7 @@ class HelloWorld(Resource):
 
     def post(self):
         body = request.get_json(force=True)
-        print("Body webhook: {}".format(body))
+        print("Body webhook: {}".format(body), flush=True)
         return 200
 
 
