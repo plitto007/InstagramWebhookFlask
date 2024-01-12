@@ -10,11 +10,11 @@ VERIFY_TOKEN = "Hello"
 @api.route('/webhook')
 class HelloWorld(Resource):
     def get(self):
-        mode = request.args.get("hub.mod")
+        mode = request.args.get("hub.mode")
         challenge = request.args.get("hub.challenge")
         verify_token = request.args.get("hub.verify_token")
         if mode == "subscribe" and verify_token == VERIFY_TOKEN:
-            return challenge, 200
+            return int(challenge), 200
 
         return "", 200
 
