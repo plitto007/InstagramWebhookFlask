@@ -18,6 +18,11 @@ class HelloWorld(Resource):
 
         return "", 200
 
+    def post(self):
+        body = request.get_json(force=True)
+        print("Body webhook: {}".format(body))
+        return 200
+
 
 if __name__ == '__main__':
     app.run(debug=True)
