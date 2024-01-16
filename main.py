@@ -21,6 +21,7 @@ class HelloWorld(Resource):
 
     def post(self):
         body = request.get_json(force=True)
+        print("Args webhook: {}".format(request.args), flush=True)
         print("Body webhook: {}".format(body), flush=True)
         return 200
 
