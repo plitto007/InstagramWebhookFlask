@@ -5,7 +5,7 @@ app = Flask(__name__)
 api = Api(app)
 import logging
 
-VERIFY_TOKEN = "GrahDev"
+VERIFY_TOKEN = "Hello"
 
 
 @api.route('/webhook')
